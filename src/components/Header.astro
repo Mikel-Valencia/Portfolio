@@ -29,7 +29,12 @@ const navItems = [
   <nav class="navigation">
     {
       navItems.map((link) => (
-        <a class="navigation__link" aria-label={link.label} href={link.url}>{link.title}</a>
+        <a class="navigation__link" aria-label={link.label} href={link.url}>
+          <span class="navigation__link-text">
+            <span class="navigation__link-text--y1">{link.title}</span>
+            <span class="navigation__link-text--y2">{link.title}</span>
+          </span>
+        </a>
       ))
     }
     <ThemeToggle />
@@ -64,13 +69,36 @@ const navItems = [
     animation-range: 0 100px;
     &__link {
       display: block;
-      position: relative;
       padding: .5rem;
-      transition: all 150ms cubic-bezier(.4,0,.2,1);
+      color: var(--text-primary);
       &:hover {
-        color: var(--highlight-clr);
+        .navigation__link-text--y1 {
+          opacity: 0;
+          transform: translate(0, -100%);
+        }
+        .navigation__link-text--y2 {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
       }
     };
+    &__link-text {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      &--y1 {
+        display: block;
+        transition: all 150ms cubic-bezier(.4,0,.2,1);
+      }
+      &--y2 {
+        display: block;
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        transform: translate(0, 100%);
+        transition: all 150ms cubic-bezier(.4,0,.2,1);
+      }
+    }
   };
   @keyframes nav-shadown {
     to {

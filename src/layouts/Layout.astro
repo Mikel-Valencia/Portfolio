@@ -30,11 +30,13 @@ const { title } = Astro.props;
 <style lang="scss" is:global>
 	:root {
 		color-scheme: light dark;
-		// --primary-clr: ;
-		// --secondary-clr: ;
-		// --highlight-clr: ;
-		--transparent-clr: hsl(360, 100%, 100%, 0);
+		--clr-transparent: hsl(360, 100%, 100%, 0);
+		--text-primary: hsl(0, 0%, 9%, 1);
+		--text-secondary: hsl(0, 0%, 40%, 1);
+		--text-highlight: hsl(48, 96%, 53%, 1);
 		--bg-gradient: hsl(360, 100%, 100%, 1);
+		--bg-secondary: hsl(220, 14%, 96%, 1);
+		--clr-border: hsl(216, 12%, 84%, 1);
 	}
 	html {
 		font-family: "Onest Variable", system-ui, sans-serif;
@@ -57,9 +59,9 @@ const { title } = Astro.props;
 	}
 	@media (prefers-color-scheme: dark) {
 		:root {
-			// --primary-clr: ;
-			// --secondary-clr: ;
-			// --highlight-clr: ;
+			--text-primary: hsl(0, 0%, 93%, 1);
+			--text-secondary: hsl(0, 0%, 63%, 1);
+			// --text-highlight: ;
 			--bg-gradient: hsl(0, 0%, 4%, 1);
 		}
 	}
