@@ -1,4 +1,8 @@
 ---
+import '@fontsource-variable/onest';
+import '../scss/bundle.scss'
+import Header from '../components/Header.astro';
+
 interface Props {
 	title: string;
 }
@@ -8,44 +12,55 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Astro description" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="generator" content={Astro.generator} />
+	<title>{title}</title>
+</head>
+<body>
+	<div class="bg-gradient"></div>
+	<Header />
+	<slot />
+</body>
 </html>
-<style is:global>
+
+<style lang="scss" is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		color-scheme: light dark;
+		// --primary-clr: ;
+		// --secondary-clr: ;
+		// --highlight-clr: ;
+		--transparent-clr: hsl(360, 100%, 100%, 0);
+		--bg-gradient: hsl(360, 100%, 100%, 1);
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		font-family: "Onest Variable", system-ui, sans-serif;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		min-height: 100svh;
+		.bg-gradient {
+			position: absolute;
+			top: 0;
+			z-index: -2;
+			height: 100vh;
+			height: 100svh;
+			width: 100vw;
+			background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120, 119, 198, .3), hsla(0, 0%, 100%, 0));
+			background-color: var(--bg-gradient);
+		}
+	}
+	@media (prefers-color-scheme: dark) {
+		:root {
+			// --primary-clr: ;
+			// --secondary-clr: ;
+			// --highlight-clr: ;
+			--bg-gradient: hsl(0, 0%, 4%, 1);
+		}
 	}
 </style>
