@@ -1,0 +1,52 @@
+<div {...Astro.props} class="badge">
+  <span class="badge__wrapper">
+    <span class="badge__border"></span>
+    <div class="badge__content">
+      <slot />
+    </div>
+  </span>
+</div>
+
+<style lang="scss">
+  .badge {
+    display: flex;
+    align-items: center;
+    &__wrapper {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      border-radius: 9999px;
+      padding: 1px;
+    }
+    &__border {
+      position: absolute;
+      inset: -1000%;
+      background-image: conic-gradient(from 90deg at 50% 50%, var(--text-highlight-secondary), var(--text-highlight-primary), var(--text-highlight-secondary));
+      animation: spin 2s linear infinite;
+    }
+    &__content {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: .25rem;
+      width: 100%;
+      padding: .25rem .5rem;
+      color: var(--text-glow);
+      background-color: var(--bg-glow);
+      border-radius: 9999px;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-weight: 500;
+      backdrop-filter: blur(64px);
+      white-space: nowrap;
+    }
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+</style>

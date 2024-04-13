@@ -1,17 +1,30 @@
 ---
+import Briefcase from "./icons/Briefcase.astro"
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro"
+import GithubIcon from "../components/icons/GithubIcon.astro"
 import SocialLink from "../components/SocialLink.astro"
+import Badge from "./Badge.astro"
+import GlowingBadge from "./GlowingBadge.astro"
 ---
 
 <div class="hero">
-  <h1>Mikel Valencia</h1>
+  <h1>MIKEL VALENCIA</h1>
+  <h2>Industrial Engineer & Software Developer</h2>
   <p class="hero__description">
-    +2 years of experience. <strong class="hero__highlight">Industrial Engineer & Software Developer</strong> from Bilbao, Spain. Specialized in the development of software for engineering.
+    Bringing ideas to life with code. Specialized in development of software for engineering.
   </p>
   <div class="hero__socials">
+    <GlowingBadge>
+      <Briefcase style="height: 1rem; width: 1rem;" />
+      ITP Aero
+    </GlowingBadge>
     <SocialLink href="https://www.linkedin.com/in/mikelvalenciazabaleta/">
       <LinkedInIcon style="height: 1rem; width: 1rem;" />
       LinkedIn
+    </SocialLink>
+    <SocialLink href="https://github.com/Mikel-Valencia">
+      <GithubIcon style="height: 1rem; width: 1rem;" />
+      Github
     </SocialLink>
   </div>
 </div>
@@ -19,27 +32,67 @@ import SocialLink from "../components/SocialLink.astro"
 <style lang="scss">
   .hero {
     h1 {
+      margin-bottom: 1rem;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      @media (min-width: 640px) {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+      @media (min-width: 768px) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+      @media (min-width: 1024px) {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+    }
+    h2 {
+      margin-bottom: 1rem;
       font-size: 2.25rem;
       line-height: 2.5rem;
       font-weight: 700;
       letter-spacing: -0.025em;
-      color: var(--text-primary);
+      background-image: var(--text-gradient);
+      background-clip: text;
+      color: transparent;
       @media (min-width: 640px) {
         font-size: 3rem;
         line-height: 1;
-      };
-    };
-    &__description {
-      margin-top: 1.5rem;
-      font-size: 1.25rem;
-      line-height: 1.75rem;
-      color: var(--text-secondary);
+      }
+      @media (min-width: 768px) {
+        font-size: 4rem;
+        line-height: 1;
+      }
+      @media (min-width: 1024px) {
+        font-size: 5rem;
+        line-height: 1;
+      }
     }
-    &__highlight {
-      font-weight: 600;
-      color: var(--text-highlight);
+    &__description {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: var(--text-secondary);
+      @media (min-width: 640px) {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+      @media (min-width: 768px) {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+      @media (min-width: 1024px) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
     }
     &__socials {
+      display: flex;
+      gap: 1rem;
       margin-top: 1.5rem;
     }
   }
