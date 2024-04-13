@@ -9,19 +9,23 @@
 
 <style lang="scss">
   .badge {
+    --text-glowing-badge: hsl(226, 91%, 46%, 1);
+    --bg-glowing-badge: hsl(180, 92%, 95%, 1);
+    --border-b1-glowing-badge: var(--text-highlight-primary);
+    --border-b2-glowing-badge: var(--text-highlight-secondary);
     display: flex;
     align-items: center;
     &__wrapper {
       position: relative;
       overflow: hidden;
       display: inline-flex;
-      border-radius: 9999px;
+      border-radius: .3rem;
       padding: 1px;
     }
     &__border {
       position: absolute;
       inset: -1000%;
-      background-image: conic-gradient(from 90deg at 50% 50%, var(--text-highlight-secondary), var(--text-highlight-primary), var(--text-highlight-secondary));
+      background-image: conic-gradient(from 90deg at 50% 50%, var(--border-b2-glowing-badge), var(--border-b1-glowing-badge), var(--border-b2-glowing-badge));
       animation: spin 2s linear infinite;
     }
     &__content {
@@ -31,11 +35,11 @@
       gap: .25rem;
       width: 100%;
       padding: .25rem .5rem;
-      color: var(--text-glow);
-      background-color: var(--bg-glow);
-      border-radius: 9999px;
-      font-size: 1rem;
-      line-height: 1.5rem;
+      color: var(--text-glowing-badge);
+      background-color: var(--bg-glowing-badge);
+      border-radius: .3rem;
+      font-size: var(--fs-glowing-badge, 1rem);
+      line-height: var(--lh-glowing-badge, 1.5rem);
       font-weight: 500;
       backdrop-filter: blur(64px);
       white-space: nowrap;
@@ -47,6 +51,10 @@
       to {
         transform: rotate(360deg);
       }
+    }
+    @media (prefers-color-scheme: dark) {
+      --text-glowing-badge: ;
+      --bg-glowing-badge: ;
     }
   }
 </style>

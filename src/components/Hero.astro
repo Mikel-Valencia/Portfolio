@@ -3,7 +3,6 @@ import Briefcase from "./icons/Briefcase.astro"
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro"
 import GithubIcon from "../components/icons/GithubIcon.astro"
 import SocialLink from "../components/SocialLink.astro"
-import Badge from "./Badge.astro"
 import GlowingBadge from "./GlowingBadge.astro"
 ---
 
@@ -74,6 +73,7 @@ import GlowingBadge from "./GlowingBadge.astro"
       }
     }
     &__description {
+      margin-bottom: 1.5rem;
       font-size: 1rem;
       line-height: 1.5rem;
       color: var(--text-secondary);
@@ -83,7 +83,7 @@ import GlowingBadge from "./GlowingBadge.astro"
       }
       @media (min-width: 768px) {
         font-size: 1.25rem;
-        line-height: 1.75rem;
+        line-height: 1.725rem;
       }
       @media (min-width: 1024px) {
         font-size: 1.5rem;
@@ -91,9 +91,18 @@ import GlowingBadge from "./GlowingBadge.astro"
       }
     }
     &__socials {
+      --fs-glowing-badge: .875rem;
+      --lh-glowing-badge: 1.25rem;
+      --fs-social-link: .875rem;
+      --lh-social-link: 1.25rem;
       display: flex;
       gap: 1rem;
-      margin-top: 1.5rem;
+      @media (min-width: 768px) {
+        --fs-glowing-badge: 1rem;
+        --lh-glowing-badge: 1.5rem;
+        --fs-social-link: 1rem;
+        --lh-social-link: 1.5rem;
+      }
     }
   }
 </style>

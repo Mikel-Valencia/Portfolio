@@ -4,18 +4,31 @@
 
 <style lang="scss">
   .social-link {
+    --text-social-link: var(--text-secondary);
+    --bg-social-link: var(--bg-secondary);
+    --border-color-social-link: var(--border-color);
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: .25rem;
     max-width: fit-content;
     padding: .25rem .5rem;
-    color: var(--text-secondary);
-    background-color: var(--bg-secondary);
-    border: var(--clr-border) solid 1px;
+    color: var(--text-social-link);
+    background-color: var(--bg-social-link);
+    border: var(--border-color-social-link) solid 1px;
     border-radius: 9999px;
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: var(--fs-social-link, 1rem);
+    line-height: var(--lh-social-link, 1.5rem);
     transition: all 150ms cubic-bezier(.4,0,.2,1);
+    &:hover {
+      --text-social-link: hsl(0, 100%, 100%, 1);
+      --bg-social-link: hsl(215, 28%, 17%, 1);
+      --border-color-social-link: hsl(221, 39%, 11%, 1);
+    }
+    @media (prefers-color-scheme: dark) {
+      --text-social-link: ;
+      --bg-social-link: ;
+      --border-color-social-link: ;
+    }
   }
 </style>
