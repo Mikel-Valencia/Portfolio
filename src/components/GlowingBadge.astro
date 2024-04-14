@@ -9,10 +9,6 @@
 
 <style lang="scss">
   .badge {
-    --text-glowing-badge: hsl(226, 91%, 46%, 1);
-    --bg-glowing-badge: hsl(180, 92%, 95%, 1);
-    --border-b1-glowing-badge: var(--text-highlight-primary);
-    --border-b2-glowing-badge: var(--text-highlight-secondary);
     display: flex;
     align-items: center;
     &__wrapper {
@@ -20,7 +16,7 @@
       overflow: hidden;
       display: inline-flex;
       border-radius: .3rem;
-      padding: 1px;
+      padding: 1.5px;
     }
     &__border {
       position: absolute;
@@ -51,10 +47,6 @@
       to {
         transform: rotate(360deg);
       }
-    }
-    @media (prefers-color-scheme: dark) {
-      --text-glowing-badge: ;
-      --bg-glowing-badge: ;
     }
   }
 </style>

@@ -4,9 +4,6 @@
 
 <style lang="scss">
   .social-link {
-    --text-social-link: var(--text-secondary);
-    --bg-social-link: var(--bg-secondary);
-    --border-color-social-link: var(--border-color);
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -21,14 +18,9 @@
     line-height: var(--lh-social-link, 1.5rem);
     transition: all 150ms cubic-bezier(.4,0,.2,1);
     &:hover {
-      --text-social-link: hsl(0, 100%, 100%, 1);
-      --bg-social-link: hsl(215, 28%, 17%, 1);
-      --border-color-social-link: hsl(221, 39%, 11%, 1);
-    }
-    @media (prefers-color-scheme: dark) {
-      --text-social-link: ;
-      --bg-social-link: ;
-      --border-color-social-link: ;
+      color: var(--text-hover-social-link);
+      background-color: var(--bg-hover-social-link);
+      border: var(--border-color-hover-social-link) solid 1px;
     }
   }
 </style>
