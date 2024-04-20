@@ -1,0 +1,59 @@
+---
+interface Props {
+  title: string
+  company: string
+  description: string
+  link?: string
+  date: string
+}
+
+const { title, company, description, link, date } = Astro.props
+---
+
+<div class="experience-item">
+  <div class="experience-item__content">
+    <h3 class="experience-item__title">{title}</h3>
+    <h4 class="experience-item__company">{company}</h4>
+    <time class="experience-item__date">{date}</time>
+    {description}
+  </div>
+</div>
+
+<style lang="scss">
+  .experience-item {
+    position: relative;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: var(--text-primary);
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1.5rem;
+      display: block;
+      height: 100%;
+      border-style: solid;
+      border-left-width: 2px;
+      border-color: var(--border-color);
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+
+    }
+    &__title {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      font-weight: 700;
+    }
+    &__company {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      font-weight: 600;
+    }
+    &__date {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+  }
+</style>

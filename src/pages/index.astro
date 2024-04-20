@@ -1,20 +1,40 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-import SectionContainer from "../components/SectionContainer.astro"
+import SectionContainer from "../components/SectionContainer.astro";
+import SectionTitle from "../components/SectionTitle.astro";
 import Hero from "../components/Hero.astro";
+import Experience from "../components/Experience.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import FolderCheck from "../components/icons/FolderCheck.astro";
+import ProfileCheck from "../components/icons/ProfileCheck.astro";
 ---
 
 <Layout title="Mikel Valencia's Portfolio - Industrial Engineer & Software Developer">
 	<main>
-		<SectionContainer class="container__hero">
+		<SectionContainer id="hero">
 			<Hero />
 			<slot />
 		</SectionContainer>
-		<SectionContainer id="experience"></SectionContainer>
-		<SectionContainer id="projects"></SectionContainer>
-		<SectionContainer id="about"></SectionContainer>
-		<SectionContainer id="contact"></SectionContainer>
+		<SectionContainer id="experience">
+			<SectionTitle>
+				<Briefcase class="section__title--icon" />
+				EXPERIENCE
+			</SectionTitle>
+			<Experience />
+		</SectionContainer>
+		<SectionContainer id="projects">
+			<SectionTitle>
+				<FolderCheck class="section__title--icon" />
+				PROJECTS
+			</SectionTitle>
+		</SectionContainer>
+		<SectionContainer id="about">
+			<SectionTitle>
+				<ProfileCheck class="section__title--icon" />
+				ABOUT
+			</SectionTitle>
+		</SectionContainer>
 	</main>
 </Layout>
 

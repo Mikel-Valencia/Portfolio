@@ -1,0 +1,60 @@
+<div class="wrapper">
+  <div id="pointer" class="blob"></div>
+  <div class="blur"></div>
+</div>
+
+<style>
+  .wrapper {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+  .blob {
+    background-color: white;
+    height: 28vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, var(--bg-color-c1-blob), var(--bg-color-c2-blob));
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+  }
+  .blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    backdrop-filter: blur(12vmax);
+  }
+  @keyframes rotate {
+    from {
+      rotate: 0deg;
+    }
+    
+    50% {
+      scale: 1 1.5;
+    }
+    
+    to {
+      rotate: 360deg;
+    }
+  }
+</style>
+
+<script is:inline>
+  const blob = document.getElementById("pointer");
+
+  window.onpointermove = event => { 
+    const { clientX, clientY } = event;
+    
+    blob.animate({
+      left: `${clientX}px`,
+      top: `${clientY}px`
+    }, { duration: 3000, fill: "forwards" });
+  }
+</script>
