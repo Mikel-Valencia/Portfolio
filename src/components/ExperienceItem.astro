@@ -2,20 +2,20 @@
 interface Props {
   title: string
   company: string
-  description: string
   link?: string
   date: string
 }
 
-const { title, company, description, link, date } = Astro.props
+const { title, company, link, date } = Astro.props
 ---
 
 <div class="experience-item">
+  <span class="experience-item__bullet">&bull;</span>
   <div class="experience-item__content">
     <h3 class="experience-item__title">{title}</h3>
     <h4 class="experience-item__company">{company}</h4>
     <time class="experience-item__date">{date}</time>
-    {description}
+    <slot />
   </div>
 </div>
 
@@ -24,6 +24,7 @@ const { title, company, description, link, date } = Astro.props
     position: relative;
     margin-left: 2rem;
     margin-right: 2rem;
+    padding-bottom: 1.5rem;
     color: var(--text-primary);
     &::before {
       content: "";
@@ -35,25 +36,40 @@ const { title, company, description, link, date } = Astro.props
       border-left-width: 2px;
       border-color: var(--border-color);
     }
+    &__bullet {
+      position: absolute;
+      left: -1.85rem;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--text-highlight-primary);
+      border-radius: 9999px;
+    }
     &__content {
       display: flex;
       flex-direction: column;
-      gap: .5rem;
+      gap: .25rem;
 
     }
     &__title {
       font-size: 1.25rem;
       line-height: 1.75rem;
       font-weight: 700;
+      color: var(--text-highlight-primary);
     }
     &__company {
       font-size: 1.25rem;
       line-height: 1.75rem;
       font-weight: 600;
+      color: var(--text-secondary);
     }
     &__date {
       font-size: 0.875rem;
       line-height: 1.25rem;
+      color: var(--text-secondary);
+    }
+    :global(.experience-item__description) {
+      margin-top: 1rem;
+      color: var(--text-primary);
     }
   }
 </style>

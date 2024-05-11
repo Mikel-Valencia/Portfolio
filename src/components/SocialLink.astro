@@ -3,6 +3,24 @@
 </a>
 
 <style lang="scss">
+  // Dark-light mode variables.
+  .social-link {
+    --text-social-link: hsl(0, 0%, 40%, 1);
+		--bg-social-link: hsl(220, 14%, 96%, 1);
+		--border-color-social-link: hsl(216, 12%, 84%, 1);
+		--text-hover-social-link: hsl(0, 100%, 100%, 1);
+    --bg-hover-social-link: hsl(215, 28%, 17%, 1);
+    --border-color-hover-social-link: hsl(221, 39%, 11%, 1);
+  }
+  :global([data-theme="dark"]) .social-link {
+    --text-social-link: hsl(218, 13%, 68%, 1);
+		--bg-social-link: hsl(0, 0%, 11%, 1);
+		--border-color-social-link: hsl(213, 12%, 18%, 1);
+		--text-hover-social-link: hsl(215, 28%, 17%, 1);
+    --bg-hover-social-link: hsl(0, 100%, 100%, 1);
+    --border-color-hover-social-link: hsl(221, 39%, 11%, 1);
+  }
+
   .social-link {
     display: inline-flex;
     justify-content: center;

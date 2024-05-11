@@ -8,6 +8,20 @@
 </div>
 
 <style lang="scss">
+  // Dark-light mode variables.
+  .badge {
+    --text-glowing-badge: hsl(226, 91%, 46%, 1);
+		--bg-glowing-badge: hsl(180, 92%, 95%, 1);
+		--border-b1-glowing-badge: hsl(230, 99%, 49%, 1);
+		--border-b2-glowing-badge: hsl(179, 96%, 50%, 1);
+  }
+  :global([data-theme="dark"]) .badge {
+    --text-glowing-badge: hsl(293, 74%, 36%, 1);
+		--bg-glowing-badge: hsl(268, 100%, 96%, 1);
+		--border-b1-glowing-badge: hsl(293, 99%, 49%);
+		--border-b2-glowing-badge: hsl(179, 96%, 50%, 1);
+  }
+
   .badge {
     display: flex;
     align-items: center;

@@ -1,0 +1,89 @@
+<div class="experience-item__description">
+  <ol class="experience-item__responsibilities">
+    <li class="experience-item__responsibilities--item">
+      <p>
+        Responsible for the development and maintenance of a <strong>fullstack web application (backend + frontend)</strong> for data analysis and SPC (Statistical Process Control), visualization and prediction of variables of the manufacturing process of NGV slots.
+      </p>
+      <div>
+        <p>Software's main functions:</p>
+        <ul>
+          <li>"Streaming" mode of operation (short-polling technique).</li>
+          <li>Upload, clean, filter, and download data in various formats.</li>
+          <li>Data visualization using interactive time series graphs.</li>
+          <li>Visualization of histograms.</li>
+          <li>Visualization of QQ-plots for graphical analysis of normal distributions.</li>
+          <li>Calculation of statistical tests focused on the analysis of normal distributions (Anderson-Darling Test).</li>
+          <li>Calculation of Cp/Cpk and Pp/Ppk process capabilities. The results calculated by the software were validated against ITP Aero's quality standards.</li>
+          <li>Generation of an interactive HTML report with a SPA architecture developed in vanilla JS.</li>
+          <li>Prediction of variables using statistical methods based on the calculation of process capabilities.</li>
+        </ul>
+      </div>
+      <div>
+        <p>Technical characteristics:</p>
+        <ul>
+          <li>DDBB: SQL Server.</li>
+          <li>Backend: Python.</li>
+          <li>Frontend: Dash, Bootstrap + SCSS, JS.</li>
+          <li>Layered architecture.</li>
+          <li>Caching: Flask caching.</li>
+          <li>Testing: pytest, Dash Testing.</li>
+          <li>Deployment: Cloudera.</li>
+          <li>Documentation: Sphinx.</li>
+          <li>Version control: SVN Tortoise.</li>
+        </ul>
+      </div>
+    </li>
+    <li class="experience-item__responsibilities--item">
+      <p>
+        Responsible for the development and maintenance of a <strong>Python package of corporate frontend components</strong> for its use in Dash applications.
+      </p>
+    </li>
+    <li class="experience-item__responsibilities--item">
+      <p>
+        Creator and teacher of a <strong>Bootstrap CSS course.</strong>
+      </p>
+    </li>
+  </ol>
+</div>
+
+<style lang="scss">
+  .experience-item {
+    &__responsibilities {
+      list-style: none;
+      counter-reset: list-number;
+      &--item {
+        position: relative;
+        margin-left: 2rem;
+        counter-increment: list-number;
+        &:not(:last-of-type) {
+          margin-bottom: 1rem;
+        }
+        &::before {
+          position: absolute;
+          top: 0;
+          left: -2rem;
+          height: 1.5rem;
+          width: 1.5rem;
+          border-radius: 9999px;
+          text-align: center;
+          background-color: var(--text-highlight-primary);
+          color: #ffffff;
+          content: counter(list-number);
+          font-weight: 600;
+          box-shadow: 1px 1px 0 #999;
+        }
+        > *:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+        ul {
+          list-style: circle;
+          margin-left: 1rem;
+        }
+        strong {
+          color: var(--text-highlight-primary);
+          font-weight: 700;
+        }
+      }
+    }
+  }
+</style>

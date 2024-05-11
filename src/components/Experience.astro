@@ -1,33 +1,23 @@
 ---
-import ExperienceItem from "../components/ExperienceItem.astro"
-
-const EXPERIENCE = [
-  {
-    date: "September 2022 - Now",
-    title: "Software developer | Data scientist",
-    company: "ITP Aero",
-    description: ""
-  },
-  {
-    date: "February 2022 - July 2022",
-    title: "Process engineer",
-    company: "ITP Aero",
-    description: ""
-  }
-]
+import ExperienceItem from "../components/ExperienceItem.astro";
+import DataEngineerExp from "./experience/DataEngineerExp.astro";
+import SoftwareDevExp from "./experience/SoftwareDevExp.astro";
 ---
 
 <ol class="experience">
-  {
-    EXPERIENCE.map((experience) => (
-      <li class="experience__wrapper">
-        <ExperienceItem {...experience} />
-      </li>
-    ))
-  }
+  <li>
+    <ExperienceItem date="April 2022 - Now" title="Data Engineer" company="ITP Aero">
+      <DataEngineerExp />
+    </ExperienceItem>
+    <ExperienceItem date="September 2022 - Now" title="Software Developer | Data Scientist" company="ITP Aero">
+      <SoftwareDevExp />
+    </ExperienceItem>
+    <ExperienceItem date="February 2022 - July 2022" title="Process Engineer" company="ITP Aero">
+    </ExperienceItem>
+  </li>
 </ol>
 
-<style>
+<style lang="scss">
   .experience {
     position: relative;
   }

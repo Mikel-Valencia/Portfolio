@@ -1,0 +1,51 @@
+<div class="experience-item__description">
+    <ol class="experience-item__responsibilities">
+        <li class="experience-item__responsibilities--item">
+            <p>
+                Responsible for the maintenance of the <strong>SQL Server database with the cost data of the company.</strong>
+            </p>
+        </li>
+    </ol>
+</div>
+
+<style lang="scss">
+    .experience-item {
+      &__responsibilities {
+        list-style: none;
+        counter-reset: list-number;
+        &--item {
+          position: relative;
+          margin-left: 2rem;
+          counter-increment: list-number;
+          &:not(:last-of-type) {
+            margin-bottom: 1rem;
+          }
+          &::before {
+            position: absolute;
+            top: 0;
+            left: -2rem;
+            height: 1.5rem;
+            width: 1.5rem;
+            border-radius: 9999px;
+            text-align: center;
+            background-color: var(--text-highlight-primary);
+            color: #ffffff;
+            content: counter(list-number);
+            font-weight: 600;
+            box-shadow: 1px 1px 0 #999;
+          }
+          > *:not(:last-child) {
+            margin-bottom: 1rem;
+          }
+          ul {
+            list-style: circle;
+            margin-left: 1rem;
+          }
+          strong {
+            color: var(--text-highlight-primary);
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  </style>
